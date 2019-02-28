@@ -1,8 +1,8 @@
 import sys
 import mysql.connector
 
-def myconnect(user, pw):
-        conn = mysql.connector.connect( host='127.0.0.1', database='world',user=user, password=pw)
+def myconnect(root, password):
+        conn = mysql.connector.connect( host='127.0.0.1', database='classicmodels',user=root, password=password)
         conn.autocommit = True
         return conn
 
