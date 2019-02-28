@@ -85,3 +85,8 @@ INSERT INTO `classicmodels`.`products` (`productCode`, `productName`, `productLi
 ```sh
 INSERT INTO `classicmodels`.`orders` (`orderNumber`, `orderDate`, `requiredDate`, `status`, `customerNumber`) VALUES ('10427', '2005-06-01', '2005-10-07', 'In Process', '119');
 ```
+## Backup
+docker exec CONTAINER /usr/bin/mysqldump -u root --password=root DATABASE > backup.sql
+
+## Restore
+cat backup.sql | docker exec -i CONTAINER /usr/bin/mysql -u root --password=root DATABASE
